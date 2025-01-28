@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-RUN apt-get update && apt-get install -y apache2
+RUN apt-get update && apt-get install -y nginx
 EXPOSE 80
-COPY index.html /var/www/html
+COPY index.html /usr/share/nginx/html
 CMD ["apache2ctl", "-D", "FOREGROUND"]
